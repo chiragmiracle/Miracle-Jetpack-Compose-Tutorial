@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,6 +31,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -40,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.miracle.kotlin_tutorial.R
@@ -122,6 +125,8 @@ class TextFieldPage : ComponentActivity() {
                         showTextShadow()
                         Spacer(modifier = Modifier.height(15.dp))
                         setTextModifiers()
+                        Spacer(modifier = Modifier.height(15.dp))
+                        TextWithShape()
                         Spacer(modifier = Modifier.height(15.dp))
                         setTextWithLine()
                         Spacer(modifier = Modifier.height(15.dp))
@@ -223,6 +228,20 @@ class TextFieldPage : ComponentActivity() {
             maxLines = 3,
             overflow = TextOverflow.Ellipsis,
 //            softWrap = false //set Text With Over Flow And Softwrap
+        )
+    }
+
+    @Composable
+    fun TextWithShape() {
+        Text(
+            text = "Text with round border",
+            color = Color.Black,
+            modifier = Modifier
+                .padding(Dp(10f))
+                .border(2.dp, SolidColor(Color.Black), RoundedCornerShape(20.dp))
+                .clip(RoundedCornerShape(25.dp))
+                .background(Color.LightGray)
+                .padding(Dp(15f))
         )
     }
 

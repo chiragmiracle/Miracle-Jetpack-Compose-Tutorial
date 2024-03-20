@@ -25,7 +25,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
@@ -145,6 +147,22 @@ class ImageFieldPage : ComponentActivity() {
                         ImageWithTint()
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
+                            text = "Rotate Image :",
+                            color = Color.Black,
+                            fontSize = 15.sp,
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+                        RotateImage()
+                        Spacer(modifier = Modifier.height(15.dp))
+                        Text(
+                            text = "Opacity Image :",
+                            color = Color.Black,
+                            fontSize = 15.sp,
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+                        OpacitiyDownImage()
+                        Spacer(modifier = Modifier.height(15.dp))
+                        Text(
                             text = "Inside Fit Image :",
                             color = Color.Black,
                             fontSize = 15.sp,
@@ -213,6 +231,30 @@ class ImageFieldPage : ComponentActivity() {
             contentDescription = "",
             colorFilter = ColorFilter.tint(Color.Red),
             modifier = Modifier
+                .size(50.dp)
+        )
+    }
+
+    @Composable
+    fun RotateImage() {
+        Image(
+            painter = painterResource(id = R.drawable.ic_image),
+            contentDescription = "",
+            modifier = Modifier
+                .rotate(135f)
+                .padding(5.dp)
+                .size(50.dp)
+        )
+    }
+
+    @Composable
+    fun OpacitiyDownImage() {
+        Image(
+            painter = painterResource(id = R.drawable.ic_image),
+            contentDescription = "",
+            modifier = Modifier
+                .alpha(0.5f) //Down Opacity
+                .padding(5.dp)
                 .size(50.dp)
         )
     }

@@ -100,7 +100,15 @@ class ColumnPage : ComponentActivity() {
                             fontSize = 15.sp,
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        SimpleRow()
+                        SimpleColumn()
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Text(
+                            text = "Weight With Column :",
+                            color = Color.Black,
+                            fontSize = 15.sp,
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        ColumnWithWeight()
                         Spacer(modifier = Modifier.height(20.dp))
                         Text(
                             text = "Arrangement With Column :",
@@ -108,7 +116,7 @@ class ColumnPage : ComponentActivity() {
                             fontSize = 15.sp,
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        RowArrangement()
+                        ColumnArrangement()
                     }
                 }
             }
@@ -116,7 +124,7 @@ class ColumnPage : ComponentActivity() {
     }
 
     @Composable
-    fun SimpleRow() {
+    fun SimpleColumn() {
         Column {
             Text(text = "Text 1", color = Color.Blue)
             Text(text = "Text 2", color = Color.Red)
@@ -125,11 +133,42 @@ class ColumnPage : ComponentActivity() {
     }
 
     @Composable
-    fun RowArrangement() {
+    fun ColumnWithWeight() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(),
+                .height(150.dp),
+        ) {
+            Column(
+                Modifier
+                    .weight(1f)
+                    .background(Color.Red)
+            ) {
+                Text(text = "Weight = 1", color = Color.White)
+            }
+            Column(
+                Modifier
+                    .weight(1f)
+                    .background(Color.Blue)
+            ) {
+                Text(text = "Weight = 1", color = Color.White)
+            }
+            Column(
+                Modifier
+                    .weight(2f)
+                    .background(Color.Green)
+            ) {
+                Text(text = "Weight = 2")
+            }
+        }
+    }
+
+    @Composable
+    fun ColumnArrangement() {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(150.dp),
             horizontalAlignment = Alignment.Start,
 //            horizontalAlignment = Alignment.CenterHorizontally,
 //            horizontalAlignment = Alignment.End,

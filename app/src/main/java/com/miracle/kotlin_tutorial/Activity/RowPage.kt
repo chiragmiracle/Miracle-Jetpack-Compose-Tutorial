@@ -104,7 +104,15 @@ class RowPage : ComponentActivity() {
                         SimpleRow()
                         Spacer(modifier = Modifier.height(20.dp))
                         Text(
-                            text = "Arrangement With Row :",
+                            text = "Row With Weight :",
+                            color = Color.Black,
+                            fontSize = 15.sp,
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        RowWithWeight()
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Text(
+                            text = " Row With Arrangement :",
                             color = Color.Black,
                             fontSize = 15.sp,
                         )
@@ -126,9 +134,39 @@ class RowPage : ComponentActivity() {
     }
 
     @Composable
+    fun RowWithWeight() {
+        Row() {
+            Column(
+                Modifier
+                    .weight(1f)
+                    .background(Color.Red)
+            ) {
+                Text(text = "Weight = 1", color = Color.White)
+            }
+            Column(
+                Modifier
+                    .weight(1f)
+                    .background(Color.Blue)
+            ) {
+                Text(text = "Weight = 1", color = Color.White)
+            }
+            Column(
+                Modifier
+                    .weight(2f)
+                    .background(Color.Green)
+            ) {
+                Text(text = "Weight = 2")
+            }
+
+        }
+    }
+
+    @Composable
     fun RowArrangement() {
         Row(
-            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(150.dp),
             verticalAlignment = Alignment.Top,
 //            verticalAlignment = Alignment.CenterVertically,
 //            verticalAlignment = Alignment.Bottom,
