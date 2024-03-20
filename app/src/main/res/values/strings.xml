@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Kotlin Tutorial</string>
+    <string name="StringResourceText">String Resource Text</string>
+</resources>
