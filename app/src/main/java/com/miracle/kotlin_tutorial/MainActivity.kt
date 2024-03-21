@@ -37,6 +37,8 @@ import com.miracle.kotlin_tutorial.Activity.ButtonPage
 import com.miracle.kotlin_tutorial.Activity.ColumnPage
 import com.miracle.kotlin_tutorial.Activity.EditTextFieldPage
 import com.miracle.kotlin_tutorial.Activity.ImageFieldPage
+import com.miracle.kotlin_tutorial.Activity.ListGridPage
+import com.miracle.kotlin_tutorial.Activity.ProgressIndicatorPage
 import com.miracle.kotlin_tutorial.Activity.RowPage
 import com.miracle.kotlin_tutorial.Activity.TextFieldPage
 import com.miracle.kotlin_tutorial.ui.theme.ColorAccent
@@ -176,6 +178,46 @@ class MainActivity : ComponentActivity() {
                                     )
                                 )
                             })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(R.drawable.ic_listgrid, "List & Grid", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, ListGridPage::class.java
+                                    )
+                                )
+                            })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_progress,
+                                "Progress Indicator",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, ProgressIndicatorPage::class.java
+                                        )
+                                    )
+                                })
                         }
                         Spacer(modifier = Modifier.width(5.dp))
                     }

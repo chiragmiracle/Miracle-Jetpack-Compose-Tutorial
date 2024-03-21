@@ -25,6 +25,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.ProgressIndicatorPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ListGridPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.EditTextFieldPage"
             android:exported="false"
             android:screenOrientation="portrait" />

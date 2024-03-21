@@ -51,3 +51,17 @@
 * Custom shape with text field.
 * OTP text field.
 * Auto resizable text field.
+
+## List & Grid :
+* Row.
+* Column.
+* Grid.
+
+## Linear & Circular ProgressBar :
+* Simple Linear Progress Indicator.
+* Custom Linear Progress Indicator.
+* Simple Circular Progress Indicator.
+* Animated Circular Progress Indicator.
+* Custom Circular Progress Indicator.
+* Animated Linear ProgressBar.
+* Steps ProgressBar.
