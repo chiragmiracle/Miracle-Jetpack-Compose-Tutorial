@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.miracle.kotlin_tutorial.Activity.ButtonPage
 import com.miracle.kotlin_tutorial.Activity.ColumnPage
+import com.miracle.kotlin_tutorial.Activity.EditTextFieldPage
 import com.miracle.kotlin_tutorial.Activity.ImageFieldPage
 import com.miracle.kotlin_tutorial.Activity.RowPage
 import com.miracle.kotlin_tutorial.Activity.TextFieldPage
@@ -80,18 +81,13 @@ class MainActivity : ComponentActivity() {
                                 .weight(1F)
                                 .fillMaxHeight(),
                         ) {
-                            selectedButton(
-                                R.drawable.ic_row,
-                                "Row",
-                                onIntent = {
-                                    startActivity(
-                                        Intent(
-                                            this@MainActivity,
-                                            RowPage::class.java
-                                        )
+                            selectedButton(R.drawable.ic_row, "Row", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, RowPage::class.java
                                     )
-                                }
-                            )
+                                )
+                            })
                         }
                         Column(
                             modifier = Modifier
@@ -99,18 +95,13 @@ class MainActivity : ComponentActivity() {
                                 .weight(1F)
                                 .fillMaxHeight(),
                         ) {
-                            selectedButton(
-                                R.drawable.ic_column,
-                                "Column",
-                                onIntent = {
-                                    startActivity(
-                                        Intent(
-                                            this@MainActivity,
-                                            ColumnPage::class.java
-                                        )
+                            selectedButton(R.drawable.ic_column, "Column", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, ColumnPage::class.java
                                     )
-                                }
-                            )
+                                )
+                            })
                         }
                         Spacer(modifier = Modifier.width(5.dp))
                     }
@@ -127,18 +118,13 @@ class MainActivity : ComponentActivity() {
                                 .weight(1F)
                                 .fillMaxHeight(),
                         ) {
-                            selectedButton(
-                                R.drawable.ic_font,
-                                "Text Field",
-                                onIntent = {
-                                    startActivity(
-                                        Intent(
-                                            this@MainActivity,
-                                            TextFieldPage::class.java
-                                        )
+                            selectedButton(R.drawable.ic_font, "Text Field", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, TextFieldPage::class.java
                                     )
-                                }
-                            )
+                                )
+                            })
                         }
                         Column(
                             modifier = Modifier
@@ -146,18 +132,13 @@ class MainActivity : ComponentActivity() {
                                 .weight(1F)
                                 .fillMaxHeight(),
                         ) {
-                            selectedButton(
-                                R.drawable.ic_image,
-                                "Image Field",
-                                onIntent = {
-                                    startActivity(
-                                        Intent(
-                                            this@MainActivity,
-                                            ImageFieldPage::class.java
-                                        )
+                            selectedButton(R.drawable.ic_image, "Image Field", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, ImageFieldPage::class.java
                                     )
-                                }
-                            )
+                                )
+                            })
                         }
                         Spacer(modifier = Modifier.width(5.dp))
                     }
@@ -174,48 +155,37 @@ class MainActivity : ComponentActivity() {
                                 .weight(1F)
                                 .fillMaxHeight(),
                         ) {
-                            selectedButton(
-                                R.drawable.ic_button,
-                                "Button",
-                                onIntent = {
-                                    startActivity(
-                                        Intent(
-                                            this@MainActivity,
-                                            ButtonPage::class.java
-                                        )
+                            selectedButton(R.drawable.ic_button, "Button", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, ButtonPage::class.java
                                     )
-                                }
-                            )
+                                )
+                            })
                         }
-//                        Column(
-//                            modifier = Modifier
-//                                .fillMaxWidth()
-//                                .weight(1F)
-//                                .fillMaxHeight(),
-//                        ) {
-//                            selectedButton(
-//                                R.drawable.ic_image,
-//                                "Image Field",
-//                                onIntent = {
-//                                    startActivity(
-//                                        Intent(
-//                                            this@MainActivity,
-//                                            ImageFieldPage::class.java
-//                                        )
-//                                    )
-//                                }
-//                            )
-//                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(R.drawable.ic_edit_text, "Edit Text Field", onIntent = {
+                                startActivity(
+                                    Intent(
+                                        this@MainActivity, EditTextFieldPage::class.java
+                                    )
+                                )
+                            })
+                        }
                         Spacer(modifier = Modifier.width(5.dp))
                     }
                 }
             }
         }
-
     }
 
     @Composable
-    private fun selectedButton(image: Int, name: String, onIntent: () -> Unit) {
+    fun selectedButton(image: Int, name: String, onIntent: () -> Unit) {
         Card(
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 10.dp

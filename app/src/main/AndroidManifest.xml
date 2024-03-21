@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.EditTextFieldPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.ButtonPage"
             android:exported="false"
             android:screenOrientation="portrait" />
