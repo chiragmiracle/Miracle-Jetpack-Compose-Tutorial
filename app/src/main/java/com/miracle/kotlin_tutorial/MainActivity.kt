@@ -34,13 +34,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.miracle.kotlin_tutorial.Activity.ButtonPage
+import com.miracle.kotlin_tutorial.Activity.CheckBoxPage
 import com.miracle.kotlin_tutorial.Activity.ColumnPage
 import com.miracle.kotlin_tutorial.Activity.EditTextFieldPage
 import com.miracle.kotlin_tutorial.Activity.ImageFieldPage
 import com.miracle.kotlin_tutorial.Activity.ListGridPage
 import com.miracle.kotlin_tutorial.Activity.ProgressIndicatorPage
+import com.miracle.kotlin_tutorial.Activity.RadioButtonsPage
 import com.miracle.kotlin_tutorial.Activity.RowPage
 import com.miracle.kotlin_tutorial.Activity.TextFieldPage
+import com.miracle.kotlin_tutorial.BottomNav.BottomNavigationPage
+import com.miracle.kotlin_tutorial.NavigationDrawer.NavDrawer
 import com.miracle.kotlin_tutorial.ui.theme.ColorAccent
 import com.miracle.kotlin_tutorial.ui.theme.Kotlin_TutorialTheme
 import com.miracle.kotlin_tutorial.ui.theme.White
@@ -215,6 +219,96 @@ class MainActivity : ComponentActivity() {
                                     startActivity(
                                         Intent(
                                             this@MainActivity, ProgressIndicatorPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_checkbox,
+                                "Check Box",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, CheckBoxPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_rediobuttons,
+                                "Radio Buttons",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, RadioButtonsPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
+
+
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_bottombar,
+                                "Bottom Navigation",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, BottomNavigationPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_navdrawer,
+                                "Navigation Drawer",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, NavDrawer::class.java
                                         )
                                     )
                                 })

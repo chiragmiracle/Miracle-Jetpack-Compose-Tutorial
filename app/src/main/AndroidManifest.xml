@@ -25,6 +25,38 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.RadioButtonsPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.CheckBoxPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavigationDrawer.SimpleNavDrawer"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavigationDrawer.CustomeNav.CustomNavDrawer"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavigationDrawer.NavDrawer"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BottomNav.Custom.CustomBottomNav"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BottomNav.Simple.SimpleBottomNav"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BottomNav.BottomNavigationPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.ProgressIndicatorPage"
             android:exported="false"
             android:screenOrientation="portrait" />

@@ -65,3 +65,14 @@
 * Custom Circular Progress Indicator.
 * Animated Linear ProgressBar.
 * Steps ProgressBar.
+
+## Check Box :
+* Simple Check Box.
+* Square Check Box.
+* Round Check Box.
+* Custom Check Box.
+* Multi Selector Check Box.
+
+## Bottom Navigation :
+* Material3 Bottom Navigation.
+* Custom Bottom Navigation with Animation.
