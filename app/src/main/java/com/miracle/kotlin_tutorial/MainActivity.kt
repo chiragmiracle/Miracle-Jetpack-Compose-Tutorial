@@ -33,16 +33,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.miracle.kotlin_tutorial.Activity.AppBarPage
 import com.miracle.kotlin_tutorial.Activity.ButtonPage
 import com.miracle.kotlin_tutorial.Activity.CheckBoxPage
 import com.miracle.kotlin_tutorial.Activity.ColumnPage
+import com.miracle.kotlin_tutorial.Activity.DialogPage
 import com.miracle.kotlin_tutorial.Activity.EditTextFieldPage
 import com.miracle.kotlin_tutorial.Activity.ImageFieldPage
 import com.miracle.kotlin_tutorial.Activity.ListGridPage
 import com.miracle.kotlin_tutorial.Activity.ProgressIndicatorPage
 import com.miracle.kotlin_tutorial.Activity.RadioButtonsPage
 import com.miracle.kotlin_tutorial.Activity.RowPage
+import com.miracle.kotlin_tutorial.Activity.SwitchPage
 import com.miracle.kotlin_tutorial.Activity.TextFieldPage
+import com.miracle.kotlin_tutorial.Activity.ToggleButtonsPage
 import com.miracle.kotlin_tutorial.BottomNav.BottomNavigationPage
 import com.miracle.kotlin_tutorial.NavigationDrawer.NavDrawer
 import com.miracle.kotlin_tutorial.ui.theme.ColorAccent
@@ -226,8 +230,6 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.width(5.dp))
                     }
                     Spacer(modifier = Modifier.height(5.dp))
-
-
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -270,8 +272,49 @@ class MainActivity : ComponentActivity() {
                         }
                         Spacer(modifier = Modifier.width(5.dp))
                     }
-
-
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_switch,
+                                "Switch",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, SwitchPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_toggle,
+                                "Toggle Buttons",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, ToggleButtonsPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
                     Spacer(modifier = Modifier.height(5.dp))
                     Row(
                         modifier = Modifier
@@ -309,6 +352,49 @@ class MainActivity : ComponentActivity() {
                                     startActivity(
                                         Intent(
                                             this@MainActivity, NavDrawer::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_appbar,
+                                "AppBar & Tab",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, AppBarPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_dialog,
+                                "Dialog",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, DialogPage::class.java
                                         )
                                     )
                                 })

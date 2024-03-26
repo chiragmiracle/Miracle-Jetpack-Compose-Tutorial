@@ -172,7 +172,8 @@ class EditTextFieldPage : ComponentActivity() {
             modifier = Modifier
                 .fillMaxWidth(),
             color = Color.Black,
-            fontSize = 15.sp,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
         )
         Spacer(modifier = Modifier.height(8.dp))

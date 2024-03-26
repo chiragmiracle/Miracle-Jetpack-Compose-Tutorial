@@ -54,6 +54,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -107,7 +108,7 @@ class CheckBoxPage : ComponentActivity() {
                                 },
                         )
                         Text(
-                            text = "Edit Text Field Demo",
+                            text = "Check Box",
                             color = Color.White,
                             fontFamily = FontFamily.SansSerif,
                             fontSize = 20.sp,
@@ -122,7 +123,6 @@ class CheckBoxPage : ComponentActivity() {
                             .fillMaxWidth()
                             .fillMaxHeight()
                             .padding(10.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
 
                         titleText("Simple Check Box :")
@@ -153,10 +153,13 @@ class CheckBoxPage : ComponentActivity() {
     @Composable
     fun SimpleCheckbox() {
         val checkedState = remember { mutableStateOf(true) }
-        Row {
+        Row (
+            verticalAlignment = Alignment.CenterVertically,
+        ){
             Checkbox(
                 checked = checkedState.value,
                 onCheckedChange = { checkedState.value = it },
+
             )
             Text(text = "Checkbox Example")
         }
@@ -170,7 +173,8 @@ class CheckBoxPage : ComponentActivity() {
             modifier = Modifier
                 .fillMaxWidth(),
             color = Color.Black,
-            fontSize = 15.sp,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
         )
         Spacer(modifier = Modifier.height(8.dp))

@@ -25,6 +25,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.DialogPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.AppBarPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ToggleButtonsPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SwitchPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.RadioButtonsPage"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -37,7 +53,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NavigationDrawer.CustomeNav.CustomNavDrawer"
+            android:name=".NavigationDrawer.CustomNavDrawer"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

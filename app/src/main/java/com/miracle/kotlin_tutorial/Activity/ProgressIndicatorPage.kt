@@ -251,9 +251,11 @@ class ProgressIndicatorPage : ComponentActivity() {
         Spacer(modifier = Modifier.height(15.dp))
         Text(
             text = text,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth(),
             color = Color.Black,
-            fontSize = 15.sp,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
         )
         Spacer(modifier = Modifier.height(8.dp))

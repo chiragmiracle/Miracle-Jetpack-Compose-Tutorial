@@ -34,7 +34,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.miracle.kotlin_tutorial.NavigationDrawer.CustomeNav.CustomNavDrawer
 import com.miracle.kotlin_tutorial.R
 import com.miracle.kotlin_tutorial.ui.theme.ColorAccent
 import com.miracle.kotlin_tutorial.ui.theme.Kotlin_TutorialTheme
@@ -46,14 +45,14 @@ class NavDrawer : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Kotlin_TutorialTheme {
-                ButtonPageUI()
+                NavDrawerUI()
             }
         }
     }
 
     @Preview(showBackground = true)
     @Composable
-    fun ButtonPageUI() {
+    fun NavDrawerUI() {
         Kotlin_TutorialTheme {
             Surface(
                 modifier = Modifier

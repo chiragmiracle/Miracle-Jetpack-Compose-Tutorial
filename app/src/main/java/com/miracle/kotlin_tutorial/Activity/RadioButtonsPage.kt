@@ -16,11 +16,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
@@ -90,7 +95,7 @@ class RadioButtonsPage : ComponentActivity() {
                                 },
                         )
                         Text(
-                            text = "Edit Text Field Demo",
+                            text = "Radio Button",
                             color = Color.White,
                             fontFamily = FontFamily.SansSerif,
                             fontSize = 20.sp,
@@ -105,11 +110,13 @@ class RadioButtonsPage : ComponentActivity() {
                             .fillMaxWidth()
                             .fillMaxHeight()
                             .padding(10.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
 
                         titleText("Simple Radio Button :")
                         SimpleRadioButton()
+
+                        titleText("Drawable Shape Radio Button :")
+                        DrawebleRadioButton()
 
                         titleText("Custom Radio Button :")
                         CustomRadioGroup()
@@ -128,7 +135,8 @@ class RadioButtonsPage : ComponentActivity() {
             modifier = Modifier
                 .fillMaxWidth(),
             color = Color.Black,
-            fontSize = 15.sp,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
         )
         Spacer(modifier = Modifier.height(8.dp))
@@ -140,8 +148,7 @@ class RadioButtonsPage : ComponentActivity() {
         val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[2]) }
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(),
+                .fillMaxWidth(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -153,7 +160,8 @@ class RadioButtonsPage : ComponentActivity() {
                             .selectable(
                                 selected = (text == selectedOption),
                                 onClick = { onOptionSelected(text) }
-                            )
+                            ),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         RadioButton(
                             selected = (text == selectedOption),
@@ -165,6 +173,43 @@ class RadioButtonsPage : ComponentActivity() {
                             text = text,
                         )
                     }
+                }
+            }
+        }
+    }
+
+
+    @Composable
+    fun DrawebleRadioButton() {
+        val radioOptions = listOf("Option 1", "Option 2", "Option 3")
+        var selectedOption by remember { mutableStateOf(radioOptions[0]) }
+
+        Column {
+            radioOptions.forEach { option ->
+                Row(
+                    Modifier
+                        .clickable { selectedOption = option }
+                        .padding(5.dp)
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    if (option == selectedOption) {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_circle_checked),
+                            contentDescription = "Selected option",
+                            modifier = Modifier.size(40.dp),
+                        )
+                    } else {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_circle_outline),
+                            contentDescription = "Unselected option",
+                            modifier = Modifier.size(40.dp),
+                        )
+                    }
+                    Text(
+                        text = option,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
                 }
             }
         }
@@ -187,7 +232,6 @@ class RadioButtonsPage : ComponentActivity() {
 
         Column(
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize(),
         ) {
             options.forEach { text ->
@@ -212,7 +256,7 @@ class RadioButtonsPage : ComponentActivity() {
                             }
                             .background(
                                 if (text == selectedOption) {
-                                    Color.Magenta
+                                    ColorAccent
                                 } else {
                                     Color.LightGray
                                 }
@@ -226,6 +270,5 @@ class RadioButtonsPage : ComponentActivity() {
             }
         }
     }
-
 
 }

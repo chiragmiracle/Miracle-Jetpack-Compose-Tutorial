@@ -161,7 +161,7 @@ class ListGridPage : ComponentActivity() {
             modifier = Modifier
                 .fillMaxWidth(),
             color = Color.Black,
-            fontSize = 16.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
         )
