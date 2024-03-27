@@ -25,6 +25,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.ChipPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ColorPicker.ColorPickerPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activity.DialogPage"
             android:exported="false"
             android:screenOrientation="portrait" />

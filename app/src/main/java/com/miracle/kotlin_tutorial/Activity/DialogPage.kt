@@ -82,7 +82,6 @@ class DialogPage : ComponentActivity() {
     @Preview(showBackground = true)
     @Composable
     fun EditTextFieldPageUI() {
-
         Kotlin_TutorialTheme {
             Surface(
                 modifier = Modifier

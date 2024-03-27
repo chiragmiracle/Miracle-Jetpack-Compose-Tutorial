@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import com.miracle.kotlin_tutorial.Activity.AppBarPage
 import com.miracle.kotlin_tutorial.Activity.ButtonPage
 import com.miracle.kotlin_tutorial.Activity.CheckBoxPage
+import com.miracle.kotlin_tutorial.Activity.ChipPage
 import com.miracle.kotlin_tutorial.Activity.ColumnPage
 import com.miracle.kotlin_tutorial.Activity.DialogPage
 import com.miracle.kotlin_tutorial.Activity.EditTextFieldPage
@@ -48,6 +49,7 @@ import com.miracle.kotlin_tutorial.Activity.SwitchPage
 import com.miracle.kotlin_tutorial.Activity.TextFieldPage
 import com.miracle.kotlin_tutorial.Activity.ToggleButtonsPage
 import com.miracle.kotlin_tutorial.BottomNav.BottomNavigationPage
+import com.miracle.kotlin_tutorial.ColorPicker.ColorPickerPage
 import com.miracle.kotlin_tutorial.NavigationDrawer.NavDrawer
 import com.miracle.kotlin_tutorial.ui.theme.ColorAccent
 import com.miracle.kotlin_tutorial.ui.theme.Kotlin_TutorialTheme
@@ -395,6 +397,49 @@ class MainActivity : ComponentActivity() {
                                     startActivity(
                                         Intent(
                                             this@MainActivity, DialogPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                    ) {
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_button,
+                                "Chip Button",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, ChipPage::class.java
+                                        )
+                                    )
+                                })
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1F)
+                                .fillMaxHeight(),
+                        ) {
+                            selectedButton(
+                                R.drawable.ic_color,
+                                "Color Picker",
+                                onIntent = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity, ColorPickerPage::class.java
                                         )
                                     )
                                 })
